@@ -21,7 +21,7 @@ function CreateArea(props) {
     });
   }
 
-  function click(){
+  function click() {
     setClicked(true);
   }
 
@@ -34,27 +34,26 @@ function CreateArea(props) {
     event.preventDefault();
   }
 
-
   return (
     <div>
       <form className="create-note">
-      {isClicked === true &&(
-        <input
-          name="title"
-          onChange={handleChange}
-          value={note.title}
-          placeholder="Title"
-        />)}
+        {isClicked === true && (
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+          />)}
         <textarea
           name="content"
           onChange={handleChange}
           onClick={click}
           value={note.content}
           placeholder="Take a note..."
-          rows={isClicked ? 3 :1}
+          rows={isClicked ? 3 : 1}
         />
-        <Zoom in={isClicked ? true :false}>
-        <Fab onClick={submitNote}><AddCircleIcon /></Fab>
+        <Zoom in={isClicked ? true : false}>
+          <Fab onClick={submitNote}><AddCircleIcon /></Fab>
         </Zoom>
       </form>
     </div>
